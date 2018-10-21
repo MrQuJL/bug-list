@@ -16,5 +16,15 @@
 
 3. 在实现一个需求的时候，需要事先与前台约定好数据的格式，不要一意孤行。
 
-4. 重写Comparator的compare方法时，返回1表示升序，-1降序。
+4. 重写Comparator的compare方法时，第一个值大于第二个值，返回1表示升序，-1降序；第一个值小于第二个值，返回1表示降序，返回-1表示升序。
 
+5. 慎用复制粘贴：
+
+	反例：
+
+	```
+	int s1 = o1.getShopCount().intValue();
+	int s2 = o1.getShopCount().intValue();
+	```
+
+	这种错误很难发现。
