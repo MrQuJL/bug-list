@@ -27,4 +27,4 @@
 	int s2 = o1.getShopCount().intValue();
 	```
 
-	这种错误很难发现。
+	这种错误IDE不会报错，很难发现。
