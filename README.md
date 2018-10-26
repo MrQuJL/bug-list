@@ -39,7 +39,7 @@
 
 	Filed id dosen't have a default value
 
-9. 
+9. 使用Java8的parallelStream（并行流）可以实现并行化流操作，但是要想达到最大的效果，流中元素的个数必须很大，CPU的核心数必须很多。
 
 
 
