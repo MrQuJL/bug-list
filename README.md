@@ -1,6 +1,6 @@
 # bug-list
 
-记录工作中遇到的一些bug
+记录工作中遇到的一些bug，学习到的一些经验，以及新的技术
 
 1. 不要轻易删除数据库中数据，与该表相关联的业务极有可能收到影响，例：某程序员误删了用户表中某用户的记录，但在订单表中仍然存储着该用户的订单记录，导致查询订单时，从订单表中获取用户的详细信息时报空指针异常。
 
@@ -41,7 +41,18 @@
 
 9. 使用Java8的parallelStream（并行流）可以实现并行化流操作，但是要想达到最大的效果，流中元素的个数必须很大，CPU的核心数必须很多。
 
+10. 在使用Java8的StreamAPI来进行编码时可以使用 ```peek``` 方法来进行断点调试，例如在下方代码的 ```peek``` 那一行点上断点，然后以```debug``` 模式运行就可以断点调试，也建议使用下面那样的调用方式（调用的方法排成一列，这样就方便断点调试）：
 
+	```java
+	public class LambdaPeek {
+
+		public static void main(String[] args) {
+			List<String> list = Stream.of("ABC", "DEF", "Ghi")
+									  .peek(e -> System.out.println(e.toLowerCase()))
+									  .collect(Collectors.toList());
+		}
+	}
+	```
 
 
 
