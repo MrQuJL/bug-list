@@ -1,4 +1,4 @@
-# bug-list
+# work-journey
 
 记录工作中遇到的一些bug，学习到的一些经验，以及新的技术
 
