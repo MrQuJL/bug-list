@@ -70,9 +70,9 @@
 
 13. @Transactional注解需要放到所有注解的最上面才起作用。
 
-14. jpa的Repository接口的抽象方法上也是可以添加@Transactional注解的
+14. jpa的Repository接口的抽象方法上也是可以添加@Transactional注解的。
 
-
+15. Spring的@Scheduled注解可以用来跑定时任务。
 
 
 
