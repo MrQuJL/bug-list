@@ -80,7 +80,9 @@
 
 18. 所以取消订单的时候也只是加的商品的库存，不需要加仓库商品的库存。
 
+19. SpringBoot启动默认是需要向的DataSourceAutoConfiguration类注入dataSource的，如果工程中没有与dataSource相关的配置，当创建dataSource bean时，就会因为缺少相关信息报如下错误：
 
+	Cannot determine embedded database driver class for database type NONE
 
 
 
