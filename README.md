@@ -84,5 +84,15 @@
 
 	Cannot determine embedded database driver class for database type NONE
 
+	解决：
+
+	> 在application.yml中添加如下配置:
+
+		spring:
+		  datasource:
+			driver-class-name: com.mysql.jdbc.Driver
+			username: admin
+			password: 123456
+			url: jdbc:mysql://127.0.0.1:3306/blog?useUnicode=true&characterEncoding=utf-8&useSSL=false
 
 
