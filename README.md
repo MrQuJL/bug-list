@@ -105,5 +105,10 @@
 
 21. 日志表有时候也需要设计成具有主从关系的。例：记录商品的非正常出入库记录，一次记录中可能操作了多个商品，这时就要把日志表设计成具有主从关系的。主表记录该次记录相同的信息，从表记录单个商品的详细信息。
 
+22. 使用fastjson解析json格式的数组：
+
+	```
+	List<OrderDetail> orderDetailList = JSONArray.parseArray(items, OrderDetail.class);
+	```
 
 
