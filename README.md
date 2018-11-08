@@ -121,4 +121,33 @@
 
 27. ```tar -Zxvf file.tar.Z``` : 解压tar.Z包
 
+28. ```rpm -ivh tree-1.6.0-10.el7.x86_64.rpm``` : 安装tree命令
+
+29. ```tree -d -L 2``` : 以树形结构查看当前路径下的文件夹，深度为两层
+
+	.
+	└── jdk1.8.0_144
+		├── bin
+		├── db
+		│   ├── bin
+		│   └── lib
+		├── include
+		│   └── linux
+		├── jre
+		│   ├── bin
+		│   ├── lib
+		│   └── plugin
+		├── lib
+		│   ├── amd64
+		│   ├── missioncontrol
+		│   └── visualvm
+		└── man
+			├── ja -> ja_JP.UTF-8
+			├── ja_JP.UTF-8
+			└── man1
+
+30. Linux清屏快捷键：Ctrl+L
+
+
+
 
