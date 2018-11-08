@@ -111,4 +111,14 @@
 	List<OrderDetail> orderDetailList = JSONArray.parseArray(items, OrderDetail.class);
 	```
 
+23. 取消订单只返回商品的库存，不返回仓库商品的库存，因为订单可以取消的话，就说明还没有发货，而只有发货的商品才会减仓库商品的库存，所以在取消订单的时候仓库商品的库存是没有变化的。
+
+24. ```tar -xvf file.tar``` : 解压tar包
+
+25. ```tar -zxvf file.tar.gz``` : 解压tar.gz包
+
+26. ```tar -jxvf file.tar.bz2``` : 解压tar.bz2包
+
+27. ```tar -Zxvf file.tar.Z``` : 解压tar.Z包
+
 
