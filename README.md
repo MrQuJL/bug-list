@@ -148,6 +148,12 @@
 
 30. Linux清屏快捷键：Ctrl+L
 
+31. JDK自带的jps命令可以用来查看Java进程的PID。
+
+32. 使用```kill -3 PID```命令可以查看Thread Dump信息，用来分析死锁和性能问题。
+
+
+
 
 
 
