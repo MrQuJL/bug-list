@@ -152,8 +152,22 @@
 
 32. 使用```kill -3 PID```命令可以查看Thread Dump信息，用来分析死锁和性能问题。
 
+33. 使用JPA的save方法存储对象时，要注意存储对象数据类型的一致.
 
+	反例:
+	@Entity
+	@DynamicUpdate
+	public class OrderMaster {
+		...
+	}
 
+	public class OrderDto extends OrderMaster {
+		private List<OrderDetail> orderDetailList;
+	}
 
+	OrderMaster orderMaster = findOne(orderId); // 注意：该方法返回OrderDto类型，但是IDE不会保存
 
+	orderMasterRepository.save(orderMaster); // 执行的时候就会报如下错误：
+
+	Unknown entity: com.xxx.xxx.dto.OrderDto
 
