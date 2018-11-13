@@ -171,3 +171,16 @@
 
 	Unknown entity: com.xxx.xxx.dto.OrderDto
 
+34. Integer类型不能使用```@NotEmpty```注解进行校验
+
+35. String类型可以使用```@NotEmpty```也可以使用```@NotNull```注解进行校验
+
+
+
+
+
+
+
+
+
+
