@@ -175,6 +175,11 @@
 
 35. String类型可以使用```@NotEmpty```也可以使用```@NotNull```注解进行校验
 
+36. 某个Controler上已经添加了 ```@Controller``` 注解，若方法要返回json格式的字符串，需要在方法上额外添加 ```@ResponseBody``` 注解，如果不添加则数据仍会返回，但是 SpringMVC 会同时转发到一个请求名.html的url去，导致404。
+
+	带来的思考：由于项目中的某个Controller里面的方法过多，笔者已经忘记了这个Controller里面的方法默认返回的是视图名，而不是json格式的数据，为了方便，就顺手在这个Controller中加了个方法来返回json数据，导致获取到数据的同时，又跳转到了一个 ```请求名.html``` 的请求，导致 404。以后一定要看准Controller上的注解再添加方法。
+
+
 
 
 
