@@ -187,7 +187,7 @@
 
 	一旦出现这种问题，不要尝试删除hadoop保存数据的tmp目录然后重新格式化，没用。最简单的方法，删掉hadoop，重装。
 
-
+39. Controller层如果要做多次写操作，需要封装到Service层，调用Service层方法，Service层出现异常可以回滚。
 
 
 
