@@ -189,7 +189,7 @@
 
 39. Controller层如果要做多次写操作，需要封装到Service层，调用Service层方法，Service层出现异常可以回滚。
 
-
+40. HDFS 客户端与 NameNode 的通信使用的是代理对象以及 RPC 协议。
 
 
 
