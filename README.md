@@ -191,5 +191,5 @@
 
 40. HDFS 客户端与 NameNode 的通信使用的是代理对象以及 RPC 协议。
 
-
+41. idea导出jar包时需要将META-INF目录的输出位置指定为resources目录，否则，MAINFEST.MF文件导不出来。
 
