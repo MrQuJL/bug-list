@@ -193,3 +193,13 @@
 
 41. idea导出jar包时需要将META-INF目录的输出位置指定为resources目录，否则，MAINFEST.MF文件导不出来。
 
+42. 某个字段有默认值的话，最好在 Java 实体类中设置属性的默认值，数据库设置的默认值有时候不管用。
+
+43. 使用 JPA 的 save 方法时报 could not read a hi value。
+
+	解决办法：把数据库实体类的注解@GeneratedValue改成@GeneratedValue(strategy = GenerationType.IDENTITY) ，试了试真的可以
+
+	@GeneratedValue(strategy = GenerationType.IDENTITY)的意思是把Hibernate提供的主键生成策略设置为identity （即自增）
+
+44. 使用 POSTMAN 时，测试 post 请求需要将参数放到 body 里面，否则请求到不了 Controller。
+
