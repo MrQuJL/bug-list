@@ -203,3 +203,6 @@
 
 44. 使用 POSTMAN 时，测试 post 请求需要将参数放到 body 里面，否则请求到不了 Controller。
 
+45. 使用 hadoop 的 FileSplit 时，要导入 org.apache.hadoop.mapreduce.lib.input.FileSplit 该包，不要导成这个包下的：org.apache.hadoop.mapred。
+
+
