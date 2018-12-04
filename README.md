@@ -205,4 +205,10 @@
 
 45. 使用 hadoop 的 FileSplit 时，要导入 org.apache.hadoop.mapreduce.lib.input.FileSplit 该包，不要导成这个包下的：org.apache.hadoop.mapred。
 
+46. 无法通过公网ip直接获取阿里云ECS服务器上的zookeeper的地址。
+	
+	解决：单独购买HBase服务器，配置ip白名单。
+
+
+
 
