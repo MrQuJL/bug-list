@@ -218,3 +218,19 @@
 50. POI中的XWPFDocument表示整个word文档，XWPFTable表示文档中的表格（可能有多个），XWPFTableRow表示表格中的行（可能有多个），XWPFTableCell表示一行中的单元格（可能有多个），XWPFParagraph表示段落（以回车符结尾区分），XWPFRun表示段落中的文本（一个字被封装成一个XWPFRun）。
 
 51. 慎用自动导包功能，极有可能导入了错误的类，但是IDE没报错，编译也没报错，但是一运行就抛各种奇怪的异常。
+
+52. 使用 POI 的 XWPFRun 的 addPicture 方法时，一定要注意后面两个参数要使用 Units.toEMU 来转换一下宽度和高度，否则图片会一直不显示（搞了两天才搞出来）。
+
+	例：
+	```
+	XWPFRun run = paragraph.createRun();
+	FileInputStream fis = new FileInputStream(new File("D:/usr/local/java/jar/chmail_template/barcode/" + e.getValue() + ".png"));
+	run.addPicture(
+			fis,	// 图片的位置
+			Document.PICTURE_TYPE_PNG, // 图片的类型
+			e.getValue() + ".png", // 图片的名字
+			Units.toEMU(200), // !!!切记，这里一定要使用 Units.toEMU 来转换长宽高，否则图片无法显示
+			Units.toEMU(50) // !!!切记，这里一定要使用 Units.toEMU 来转换长宽高，否则图片无法显示
+	);
+	fis.close();
+	```
