@@ -253,5 +253,28 @@
 
 59. **一条来自真实的生产环境的经验**：服务器A和服务器B启动Redis服务，服务器C启动Twemproxy的nutcracker（redis的代理分片，在读取后端的两台redis服务器中的缓存时，提供负载均衡服务），在C上执行redis-cli -p 22121命令来访问后端的两台Redis服务器时发现连接被拒绝。原因：代理分片想要读取A和B上的Redis中的数据，需要访问6379端口，阿里云服务器的安全组入方向的配置中没有开放6379端口。解决：配置安全组规则，开放6379端口。
 
+60. **一条来自真实的生产环境的经验**：只能通过代理分片get后端redis的数据，不能写。
 
+61. 分别测试通过代理分片服务器和直接访问redis服务器这两种方式，测试服务器每秒能够处理的请求数：
 
+	root@secret:~/training/redis# bin/redis-benchmark -h redis111 -p 6379 -c 100 -n 10000 -t get -q
+	GET: 1003.61 requests per second
+
+	root@secret:~/training/redis# bin/redis-benchmark -h redis112 -p 6379 -c 100 -n 10000 -t get -q
+	GET: 1138.69 requests per second
+
+	root@secret:~/training/redis# bin/redis-benchmark -h localhost -p 22121 -c 100 -n 10000 -t get -q
+	GET: 4885.20 requests per second
+
+	前两次测试是直接访问的redis服务器，平均每秒能处理1000个请求
+	
+	最后一次是通过代理分片访问的redis服务器，平均每秒能处理近5000请求
+	
+	
+	
+	
+	
+	
+	
+	
+	
