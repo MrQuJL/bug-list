@@ -270,11 +270,24 @@
 	
 	最后一次是通过代理分片访问的redis服务器，平均每秒能处理近5000请求
 	
+62. 在执行 `bin/redis-trib.rb create --replicas 1 192.168.157.111:6379 192.168.157.111:6380 192.168.157.111:6381 192.168.157.111:6382 192.168.157.111:6383 192.168.157.111:6384` 命令启动 redis cluster 时如果出现如下错误：
+
+	/var/lib/gems/2.3.0/gems/redis-3.0.5/lib/redis/client.rb:85:in `call': ERR Slot 0 is already busy (Redis
+	from /var/lib/gems/2.3.0/gems/redis-3.0.5/lib/redis.rb:2288:in `block in method_missing'
+	from /var/lib/gems/2.3.0/gems/redis-3.0.5/lib/redis.rb:36:in `block in synchronize'
+	from /usr/lib/ruby/2.3.0/monitor.rb:214:in `mon_synchronize'
+	from /var/lib/gems/2.3.0/gems/redis-3.0.5/lib/redis.rb:36:in `synchronize'
+	from /var/lib/gems/2.3.0/gems/redis-3.0.5/lib/redis.rb:2287:in `method_missing'
+	from bin/redis-trib.rb:205:in `flush_node_config'
+	from bin/redis-trib.rb:667:in `block in flush_nodes_config'
+	from bin/redis-trib.rb:666:in `each'
+	from bin/redis-trib.rb:666:in `flush_nodes_config'
+	from bin/redis-trib.rb:1007:in `create_cluster_cmd'
+	from bin/redis-trib.rb:1388:in `<main>'
 	
+	说明redis集群中的每个节点在搭建集群之前的旧数据和配置信息没有清理干净。解决：用 redis-cli 登录到每一个节点，执行 flushall 和 cluster reset命令，然后重新启动集群就可以了。
 	
-	
-	
-	
+63. 在配置 redis 集群部署的时候，每个节点的配置文件(redis.conf)中的 pidfile不要忘记修改。
 	
 	
 	
