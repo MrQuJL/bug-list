@@ -288,17 +288,12 @@
 	说明redis集群中的每个节点在搭建集群之前的旧数据和配置信息没有清理干净。解决：用 redis-cli 登录到每一个节点，执行 flushall 和 cluster reset命令，然后重新启动集群就可以了。
 	
 63. 在配置 redis 集群部署的时候，每个节点的配置文件(redis.conf)中的 pidfile不要忘记修改。
-	
+
 64. **一条来自真实的生产环境的经验**：启动RedisCluster的时候要用内网的ip地址启动，不要使用localhost，127.0.0.1启动，否则本地调试使用JavaAPI无法访问（本地访问要使用公网地址，阿里云服务器会将公网ip映射到对应的内网机器上）。
 
+65. 在使用BigDecimal的setScale方法设置精度的时候，要添加舍入模式，否则小数点位数过多的时候会抛出异常。
+
+	money.setScale(2, BigDecimal.ROUND_HALF_DOWN)
 
 
 
-
-
-
-
-
-
-
-	
