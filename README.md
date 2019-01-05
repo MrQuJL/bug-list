@@ -295,5 +295,16 @@
 
 	money.setScale(2, BigDecimal.ROUND_HALF_DOWN)
 
+66. 在运行storm程序的时候如果提示找不到某个类，一个简单的方法是可以把对应的jar包放到storm的lib目录下，因为storm启动的时候会去加载lib目录下的jar。
+
+
+
+
+
+
+
+
+
+
 
 
