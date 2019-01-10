@@ -297,8 +297,12 @@
 
 66. 在运行storm程序的时候如果提示找不到某个类，一个简单的方法是可以把对应的jar包放到storm的lib目录下，因为storm启动的时候会去加载lib目录下的jar。
 
+67. mybatis在进行多条件查询的时候，支持的写法：Parameter 'arg5' not found. Available parameters are [arg3, arg2, param5, arg4, arg1, arg0, param3, param4, param1, param2]
 
+	例：arg0, arg1, arg2, arg3, arg4
+	例：param1, param2, param3, param4, param5
 
+68. mybatis与springboot整合之后，需要在接口定义的的参数前加@Param("xxx")注解，xxx即为mapper.xml里对应sql中的参数名，不加注解的话会报：There is no getter for property named 'xxxxx' in 'class java.lang.String'
 
 
 
