@@ -304,7 +304,7 @@
 
 68. mybatis与springboot整合之后，需要在接口定义的的参数前加@Param("xxx")注解，xxx即为mapper.xml里对应sql中的参数名，不加注解的话会报：There is no getter for property named 'xxxxx' in 'class java.lang.String'
 
-
+69. 301表示永久重定向，302表示临时重定向，并且在实际应用中：重定向的那个请求的方法会修改为GET
 
 
 
