@@ -308,7 +308,7 @@
 
 70. 使用POI进行word转pdf的时候一定要设置整个word的文字的颜色为黑色，否则在转换的过程中代码会因为无法decode颜色的代码而抛出NumberFormatException
 
-
+71. 在进行LIKE模糊查询的时候，如果某个字段是NULL，则没有办法通过 LIKE '%%' 查询到。
 
 
 
