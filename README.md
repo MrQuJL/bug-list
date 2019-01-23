@@ -315,3 +315,34 @@
 73. 针对多字段模糊查询的时候，可以使用MySql的CONCAT_WS('',column1,column2,column3,..)带有分隔符的拼接函数，来拼接多个字段，这样可以避免因一个字段为NULL而导致查询结果为空
 
 74. 在对Spark的RDD进行操作的时候尽量针对每一个分区进行操作，可以避免多个分区共用一个对象而造成的序列化问题，比如：将RDD中的数据保存到数据库。
+
+75. 在Linux上通过rpm的方式安装mysql，安装rpm软件包的时候要加上 --force --nodeps 避免依赖旧的软件包
+
+	例：rpm -ivh mysql-community-libs-5.7.19-1.el7.x86_64.rpm --force --nodeps
+
+76. 手动释放Linux内存：
+
+	1. 执行 sync 命令将 Linux 缓存的数据写到硬盘上，确保数据的完整性
+	
+	2. 执行 echo 1 > /proc/sys/vm/drop_caches 修改 drop_caches 文件的值为1
+	
+	3. drop_caches的值可以是0-3之间的数字，代表不同的含义：
+		
+		0：不释放
+		1：释放页缓存
+		2：释放dentries和inodes
+		3：释放所有缓存
+
+
+
+
+
+
+
+
+
+
+
+
+
+
