@@ -333,7 +333,9 @@
 		2：释放dentries和inodes
 		3：释放所有缓存
 
+77. Spark的检查点设置为HDFS目录时，本地调试的时候也需要返回datanode的主机名，然后配置hosts映射来访问datanode，相应的创建StreamingContext的时候就需要使用如下接口以便于传入Hadoop的Configuration，详见：(https://blog.csdn.net/a909301740/article/details/85334980)：
 
+	def getOrCreate(checkpointPath: String, creatingFunc: () => StreamingContext, hadoopConf: Configuration, createOnError: Boolean): StreamingContext
 
 
 
