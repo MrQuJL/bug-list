@@ -337,7 +337,10 @@
 
 	def getOrCreate(checkpointPath: String, creatingFunc: () => StreamingContext, hadoopConf: Configuration, createOnError: Boolean): StreamingContext
 
+78. kafka创建topic时报错：org.apache.zookeeper.KeeperException$NoNodeException: KeeperErrorCode = NoNode for /brokers/ids
 
+	原因：需要先启动kafka，再创建topic
+	bin/kafka-server-start.sh config/server.properties &
 
 
 
