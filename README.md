@@ -342,7 +342,11 @@
 	原因：需要先启动kafka，再创建topic
 	bin/kafka-server-start.sh config/server.properties &
 
-
+79. 
+	启动服务：systemctl start service_name
+	关闭服务：systemctl stop service_name
+	开机自启服务：systemctl enable service_name
+	开机不自启服务：systemctl disable service_name
 
 
 
