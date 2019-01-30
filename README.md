@@ -348,9 +348,10 @@
 	开机自启服务：systemctl enable service_name
 	开机不自启服务：systemctl disable service_name
 
+80. Linux切换用户：su 不更换home目录，不更改环境变量；su - 更换home目录，更改环境变量
 
-
-
+81. 在RedHat/CentOS/Fedora上安装httpd服务的方式为：yum install httpd
+	在Ubuntu/Debian 上安装apache2(相当于上面的httpd)服务的方式为apt-get install apache2
 
 
 
