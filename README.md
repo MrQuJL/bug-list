@@ -353,6 +353,6 @@
 81. 在RedHat/CentOS/Fedora上安装httpd服务的方式为：yum install httpd
 	在Ubuntu/Debian 上安装apache2(相当于上面的httpd)服务的方式为apt-get install apache2
 
-
+82. 使用 cat 命令查看文件时，若文件过大一般后面会跟一个管道符号+more来分屏显示：hdfs dfs -cat /output/data.txt | more
 
 
