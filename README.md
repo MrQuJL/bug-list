@@ -355,4 +355,10 @@
 
 82. 使用 cat 命令查看文件时，若文件过大一般后面会跟一个管道符号+more来分屏显示：hdfs dfs -cat /output/data.txt | more
 
+83. Flume source 类型:
+	* Avro Source
+	* Exec Source
+	* Spooling Directory
+	* Tairdir
+	* Kafka Source
 
