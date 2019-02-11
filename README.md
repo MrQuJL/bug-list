@@ -362,3 +362,14 @@
 	* Tairdir
 	* Kafka Source
 
+84. 同一个SparkContext对象可以用来创建多个StreamingContext对象，但是后一个StreamingContext对象必须等前一个StreamingContext对象停止才可以创建。
+
+
+
+
+
+
+
+
+
+
