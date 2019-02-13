@@ -366,9 +366,9 @@
 
 85. 根据物流单号导出订单的时候导出失败，原因：那一批订单里面有一个售后订单，同一个订单可能产生多个售后订单，为了区分这些订单再这些订单的后面追加"_1,_2,_3,..."来区分，结果导致导出订单时，无法识别"_"符号报错，将"_"替换成字母X解决
 
+86. 设置Flume(pull模式)的sink类型为 a1.sinks.k1.type = org.apache.spark.streaming.flume.sink.SparkSink 时，sink的hostname要设置为云服务器的内网ip,不要写127.0.0.1，否则外部的SparkStreaming程序无法与之建立连接
 
-
-
+87. 通过Flume的pull模式集成SparkStreaming时，flume的lib目录下要把spark的所有jar包，以及spark-streaming-flume-sink jar包添加上
 
 
 
