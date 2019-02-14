@@ -370,6 +370,6 @@
 
 87. 通过Flume的pull模式集成SparkStreaming时，flume的lib目录下要把spark的所有jar包，以及spark-streaming-flume-sink jar包添加上
 
-
+88. kafka的高层次消费者API的优点是使用方便，不需要处理偏移量；简单消费者API的优点是可以自己控制偏移量。
 
 
