@@ -372,4 +372,12 @@
 
 88. kafka的高层次消费者API的优点是使用方便，不需要处理偏移量；简单消费者API的优点是可以自己控制偏移量。
 
+89. 启动hive之前先启动HDFS。
+
+90. 启动kafka之前先启动zookeeper。
+
+91. 启动hdfs发现没有namenode的一个原因：没有格式化namenode：hdfs namenode -format
+
+
+
 
