@@ -378,6 +378,16 @@
 
 91. 启动hdfs发现没有namenode的一个原因：没有格式化namenode：hdfs namenode -format
 
+92. 通过 jdbc 操作hive，所需的 jar 包如下：
 
+	```
+	<dependency>
+		<groupId>org.apache.hive</groupId>
+		<artifactId>hive-jdbc</artifactId>
+		<version>2.3.0</version>
+	</dependency>
+	```
+
+	
 
 
