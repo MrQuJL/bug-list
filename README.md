@@ -388,6 +388,18 @@
 	</dependency>
 	```
 
-	
+93. 编写 hive 的 UDF，所需的 jar 包如下：
+
+	```
+	<dependency>
+		<groupId>org.apache.hive</groupId>
+		<artifactId>hive-exec</artifactId>
+		<version>2.3.0</version>
+	</dependency>
+	```
+
+
+
+
 
 
