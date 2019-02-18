@@ -398,6 +398,20 @@
 	</dependency>
 	```
 
+94. mybatis 在使用 if，when 这样的判断标签时，里面的字符串需要调用.toString()方法，否则会报诡异的NumberFormatException
+
+	```xml
+	<if test="deliveryNumber != ''.toString()">
+		<choose>
+			<when test="deliveryNumber == '空'.toString()">
+				AND A.delivery_number IS NULL OR A.delivery_number = ''
+			</when>
+			<otherwise>
+				AND A.delivery_number LIKE CONCAT('%', #{deliveryNumber}, '%')
+			</otherwise>
+		</choose>
+	</if>
+	```
 
 
 
