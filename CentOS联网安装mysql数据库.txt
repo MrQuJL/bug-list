@@ -1,0 +1,30 @@
+1. yum install mysql
+
+2. yum install mysql-devel
+
+3. wget http://dev.mysql.com/get/mysql-community-release-el7-5.noarch.rpm
+
+4. rpm -ivh mysql-community-release-el7-5.noarch.rpm
+
+5. yum install mysql-community-server
+
+6. 启动mysql服务：service mysqld start => systemctl start mysqld
+
+7. 修改mysql的配置文件：/etc/my.cnf内容如下：
+
+	[mysql]
+	default-character-set = utf8
+
+	注：这里的字符编码必须和/usr/share/mysql/charsets/Index.xml中一致。
+
+8. 开启远程连接：
+
+	# 授予所有数据库的所有表的权限
+	grant all privileges on *.* to 'root'@'%' identified by 'password';
+	
+	# 创建用户
+	create user 'username'@'%' identified by 'password';
+	
+	# 修改用户密码
+	set password for 'root'@'%' = password('password');
+
