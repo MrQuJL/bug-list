@@ -1,0 +1,197 @@
+==========================
+Creating target directory...
+==========================
+
+Command start time 2019-02-20 14:43:50
+
+Connection to qujianlei closed.
+SSH command execution finished
+host=qujianlei, exitcode=0
+Command end time 2019-02-20 14:43:50
+
+==========================
+Copying ambari sudo script...
+==========================
+
+Command start time 2019-02-20 14:43:50
+
+scp /var/lib/ambari-server/ambari-sudo.sh
+host=qujianlei, exitcode=0
+Command end time 2019-02-20 14:43:50
+
+==========================
+Copying common functions script...
+==========================
+
+Command start time 2019-02-20 14:43:50
+
+scp /usr/lib/python2.6/site-packages/ambari_commons
+host=qujianlei, exitcode=0
+Command end time 2019-02-20 14:43:52
+
+==========================
+Copying create-python-wrap script...
+==========================
+
+Command start time 2019-02-20 14:43:52
+
+scp /var/lib/ambari-server/create-python-wrap.sh
+host=qujianlei, exitcode=0
+Command end time 2019-02-20 14:43:53
+
+==========================
+Copying OS type check script...
+==========================
+
+Command start time 2019-02-20 14:43:53
+
+scp /usr/lib/python2.6/site-packages/ambari_server/os_check_type.py
+host=qujianlei, exitcode=0
+Command end time 2019-02-20 14:43:53
+
+==========================
+Running create-python-wrap script...
+==========================
+
+Command start time 2019-02-20 14:43:53
+
+Connection to qujianlei closed.
+SSH command execution finished
+host=qujianlei, exitcode=0
+Command end time 2019-02-20 14:43:53
+
+==========================
+Running OS type check...
+==========================
+
+Command start time 2019-02-20 14:43:53
+Cluster primary/cluster OS family is redhat7 and local/current OS family is redhat7
+
+Connection to qujianlei closed.
+SSH command execution finished
+host=qujianlei, exitcode=0
+Command end time 2019-02-20 14:43:53
+
+==========================
+Checking 'sudo' package on remote host...
+==========================
+
+Command start time 2019-02-20 14:43:53
+
+Connection to qujianlei closed.
+SSH command execution finished
+host=qujianlei, exitcode=0
+Command end time 2019-02-20 14:43:53
+
+==========================
+Copying repo file to 'tmp' folder...
+==========================
+
+Command start time 2019-02-20 14:43:53
+
+scp /etc/yum.repos.d/ambari.repo
+host=qujianlei, exitcode=0
+Command end time 2019-02-20 14:43:53
+
+==========================
+Moving file to repo dir...
+==========================
+
+Command start time 2019-02-20 14:43:53
+
+Connection to qujianlei closed.
+SSH command execution finished
+host=qujianlei, exitcode=0
+Command end time 2019-02-20 14:43:54
+
+==========================
+Changing permissions for ambari.repo...
+==========================
+
+Command start time 2019-02-20 14:43:54
+
+Connection to qujianlei closed.
+SSH command execution finished
+host=qujianlei, exitcode=0
+Command end time 2019-02-20 14:43:54
+
+==========================
+Copying setup script file...
+==========================
+
+Command start time 2019-02-20 14:43:54
+
+scp /usr/lib/python2.6/site-packages/ambari_server/setupAgent.py
+host=qujianlei, exitcode=0
+Command end time 2019-02-20 14:43:54
+
+==========================
+Running setup agent script...
+==========================
+
+Command start time 2019-02-20 14:43:54
+("INFO 2019-02-20 14:44:01,232 HeartbeatHandlers.py:116 - Stop event received
+INFO 2019-02-20 14:44:01,232 NetUtil.py:130 - Stop event received
+INFO 2019-02-20 14:44:01,232 ExitHelper.py:56 - Performing cleanup before exiting...
+INFO 2019-02-20 14:44:01,232 ExitHelper.py:70 - Cleanup finished, exiting with code:0
+INFO 2019-02-20 14:44:02,427 main.py:283 - Agent died gracefully, exiting.
+INFO 2019-02-20 14:44:02,427 ExitHelper.py:56 - Performing cleanup before exiting...
+INFO 2019-02-20 14:44:03,067 main.py:145 - loglevel=logging.INFO
+INFO 2019-02-20 14:44:03,067 main.py:145 - loglevel=logging.INFO
+INFO 2019-02-20 14:44:03,067 main.py:145 - loglevel=logging.INFO
+INFO 2019-02-20 14:44:03,068 DataCleaner.py:39 - Data cleanup thread started
+INFO 2019-02-20 14:44:03,070 DataCleaner.py:120 - Data cleanup started
+INFO 2019-02-20 14:44:03,070 DataCleaner.py:122 - Data cleanup finished
+INFO 2019-02-20 14:44:03,070 hostname.py:67 - agent:hostname_script configuration not defined thus read hostname 'qujianlei' using socket.getfqdn().
+INFO 2019-02-20 14:44:03,105 PingPortListener.py:50 - Ping port listener started on port: 8670
+INFO 2019-02-20 14:44:03,107 main.py:437 - Connecting to Ambari server at https://qujianlei:8440 (39.107.70.197)
+INFO 2019-02-20 14:44:03,107 NetUtil.py:70 - Connecting to https://qujianlei:8440/ca
+ERROR 2019-02-20 14:44:03,114 NetUtil.py:96 - EOF occurred in violation of protocol (_ssl.c:618)
+ERROR 2019-02-20 14:44:03,114 NetUtil.py:97 - SSLError: Failed to connect. Please check openssl library versions. 
+Refer to: https://bugzilla.redhat.com/show_bug.cgi?id=1022468 for more details.
+WARNING 2019-02-20 14:44:03,114 NetUtil.py:124 - Server at https://qujianlei:8440 is not reachable, sleeping for 10 seconds...
+", None)
+("INFO 2019-02-20 14:44:01,232 HeartbeatHandlers.py:116 - Stop event received
+INFO 2019-02-20 14:44:01,232 NetUtil.py:130 - Stop event received
+INFO 2019-02-20 14:44:01,232 ExitHelper.py:56 - Performing cleanup before exiting...
+INFO 2019-02-20 14:44:01,232 ExitHelper.py:70 - Cleanup finished, exiting with code:0
+INFO 2019-02-20 14:44:02,427 main.py:283 - Agent died gracefully, exiting.
+INFO 2019-02-20 14:44:02,427 ExitHelper.py:56 - Performing cleanup before exiting...
+INFO 2019-02-20 14:44:03,067 main.py:145 - loglevel=logging.INFO
+INFO 2019-02-20 14:44:03,067 main.py:145 - loglevel=logging.INFO
+INFO 2019-02-20 14:44:03,067 main.py:145 - loglevel=logging.INFO
+INFO 2019-02-20 14:44:03,068 DataCleaner.py:39 - Data cleanup thread started
+INFO 2019-02-20 14:44:03,070 DataCleaner.py:120 - Data cleanup started
+INFO 2019-02-20 14:44:03,070 DataCleaner.py:122 - Data cleanup finished
+INFO 2019-02-20 14:44:03,070 hostname.py:67 - agent:hostname_script configuration not defined thus read hostname 'qujianlei' using socket.getfqdn().
+INFO 2019-02-20 14:44:03,105 PingPortListener.py:50 - Ping port listener started on port: 8670
+INFO 2019-02-20 14:44:03,107 main.py:437 - Connecting to Ambari server at https://qujianlei:8440 (39.107.70.197)
+INFO 2019-02-20 14:44:03,107 NetUtil.py:70 - Connecting to https://qujianlei:8440/ca
+ERROR 2019-02-20 14:44:03,114 NetUtil.py:96 - EOF occurred in violation of protocol (_ssl.c:618)
+ERROR 2019-02-20 14:44:03,114 NetUtil.py:97 - SSLError: Failed to connect. Please check openssl library versions. 
+Refer to: https://bugzilla.redhat.com/show_bug.cgi?id=1022468 for more details.
+WARNING 2019-02-20 14:44:03,114 NetUtil.py:124 - Server at https://qujianlei:8440 is not reachable, sleeping for 10 seconds...
+", None)
+
+Connection to qujianlei closed.
+SSH command execution finished
+host=qujianlei, exitcode=0
+Command end time 2019-02-20 14:44:05
+
+Registering with the server...
+Registration with the server failed.
+
+
+解决方案：
+在所有的节点上
+
+1、vi /etc/ambari-agent/conf/ambari-agent.ini
+
+添加  在 [security] 下  force_https_protocol=PROTOCOL_TLSv1_2
+
+2、vi /etc/python/cert-verification.cfg
+
+[https]
+verify=disable
+
+
