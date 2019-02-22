@@ -1,0 +1,6 @@
+一定注意：解压后，需要删除目录下所有的html文件
+		[root@hdp21 ambari]# find . -name *.html
+		./HDP/centos7/2.6.3.0-235/private_index.html
+		./HDP/centos7/2.6.3.0-235/index.html
+		./HDP/centos7/2.6.3.0-235/public_index.html
+		./HDP/centos7/2.6.3.0-235/hotfix_index.html
