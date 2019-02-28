@@ -415,6 +415,6 @@
 
 95. 放在Apache Http服务器上的目录，如果想以目录列表的形式在网页上显示，目录中不要有.html文件。
 
-
+96. SQL进行子查询的时候，要为字表其个别名，否则会报：Every derived table must have its own alias(sql语法错误)
 
 
