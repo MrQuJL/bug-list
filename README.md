@@ -417,4 +417,5 @@
 
 96. SQL进行子查询的时候，要为字表其个别名，否则会报：Every derived table must have its own alias(sql语法错误)
 
+97. hadoop的序列化相对于java的序列化更重量级，为了传输数据更加迅速，所以hadoop使用writable序列化.
 
