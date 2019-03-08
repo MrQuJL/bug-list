@@ -420,3 +420,5 @@
 97. hadoop的序列化相对于java的序列化更重量级，为了传输数据更加迅速，所以hadoop使用writable序列化.
 
 98. 可以使用MapReduce提供的context.getCounter("group", "flag").increment(1)来统计一些数据.
+
+99. mapreduce的主程序如果不写job.setJarByClass(WordCountMain.class);就会在执行到Map阶段的时候报ClassNotFoundException
