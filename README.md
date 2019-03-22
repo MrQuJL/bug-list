@@ -422,3 +422,12 @@
 98. 可以使用MapReduce提供的context.getCounter("group", "flag").increment(1)来统计一些数据.
 
 99. mapreduce的主程序如果不写job.setJarByClass(WordCountMain.class);就会在执行到Map阶段的时候报ClassNotFoundException
+
+100. 启动Hadoop的historyserver：mr-jobhistory-daemon.sh start historyserver
+
+101. 使用mybatis时，尽量不要使用arg0,arg1,parm1,parm2...这样类似的参数，容易造成线上出错，但是线下运行正常
+
+
+
+
+
