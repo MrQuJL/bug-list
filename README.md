@@ -427,5 +427,8 @@
 
 101. 使用mybatis时，尽量不要使用arg0,arg1,parm1,parm2...这样类似的参数，容易造成线上出错，但是线下运行正常
 
-102.向spark集群提交sparkSQL任务时不要在代码最后关闭sparkContext，容易导致SparkSQL查询还没有执行完毕，提交的Spark任务就已经被Killed了
+102. 向spark集群提交sparkSQL任务时不要在代码最后关闭sparkContext，容易导致SparkSQL查询还没有执行完毕，提交的Spark任务就已经被Killed了
+
+103. mybatis实现批量更新: https://www.cnblogs.com/exmyth/p/5757137.html
+
 
