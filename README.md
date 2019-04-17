@@ -432,3 +432,13 @@
 103. mybatis实现批量更新: https://www.cnblogs.com/exmyth/p/5757137.html
 
 104. 将 "|" 作为分隔符切分字符串的时候需要转义"\\|"
+
+105. 一个奇怪的bug：在for循环里面对spark的累加器进行累加操作，出了for循环之后累加的值全部消失了？？？
+
+106. The supplied data appears to be in the Office 2007+ XML
+
+	HSSFWorkbook:是操作Excel2003以前（包括2003）的版本，扩展名是.xls
+	XSSFWorkbook:是操作Excel2007的版本，扩展名是.xlsx
+
+
+
