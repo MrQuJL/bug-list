@@ -452,6 +452,16 @@
 
 112. 线上环境关闭mybatis的sql打印日志能够在大数据量的查询下缩短响应时间。
 
+113. hadoop jar 命令的使用方式
+
+	* 打好的 jar 包中的 META-INF 目录内MANIFEST.MF文件中指明了主类:Main-Class的写法: hadoop jar xxx.jar /input /output
+	* MANIFEST.MF文件中没有指明了主类:Main-Class的写法:hadoop jar xxx.jar xx.xx.xx.MainClass /input /output
+
+114. 在使用Linux的crontab（定时任务）时，如果要定时执行的脚本中要执行jar文件，需要在脚本的开头加上 source /etc/profile 命令来在crontab的环境中引入相应环境变量，否则jar包执行失败。
+
+
+
+
 
 
 
