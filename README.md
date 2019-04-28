@@ -459,6 +459,11 @@
 
 114. 在使用Linux的crontab（定时任务）时，如果要定时执行的脚本中要执行jar文件，需要在脚本的开头加上 source /etc/profile 命令来在crontab的环境中引入相应环境变量，否则jar包执行失败。
 
+115. shell获取调用jar包后的返回值的方法：
+
+	* 程序末尾写System.exit(99)，在shell中通过$?获取(注:获取的$?值一定要紧跟执行的jar包命令，否则获取到的就不是执行jar包命令后的返回值)
+	
+	* 程序末尾写System.out.println(99)，在shell中通过returncode=`java -jar xxx.jar`的方式将返回值保存到returncode变量中。
 
 
 
