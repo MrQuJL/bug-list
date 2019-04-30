@@ -465,10 +465,37 @@
 	
 	* 程序末尾写System.out.println(99)，在shell中通过returncode=`java -jar xxx.jar`的方式将返回值保存到returncode变量中。
 
+116. Linux中与压缩/解压缩文件相关：
 
+	* tar压缩文件(以gzip的方式)：tar -zcvf result.tar.gz origin.txt
+	
+	* tar压缩文件(以bizp2的方式)：tar -jcvf result.tar.bz2 origin.txt
+	
+	* result.tar.gz为压缩后的文件名
+	
+	* origin.txt为待压缩的文件名
 
+	* 压缩后源文件仍然存在
+	
+	* gzip压缩文件：gzip test.txt
+	
+	* gzip解压缩文件：gzip -d test.txt.gz
+	
+	* gzip压缩不能保留源文件
+	
+	* gzip压缩速度快，压缩比相对bzip2低
+	
+	* gzip不能压缩目录
+	
+	* bzip2压缩文件：bzip2 test.txt
+	
+	* bzip2压缩后保留源文件：bzip2 -k test.txt
+	
+	* bzip2解压缩文件：bzip2 -d test.txt.bz2
 
+	* bzip2压缩速度慢，压缩比相对gzip高
 
+	* bzip2不能压缩目录
 
-
+	* 使用tar命令的话就可以压缩目录
 
