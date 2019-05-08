@@ -499,3 +499,21 @@
 
 	* 使用tar命令的话就可以压缩目录
 
+117. 以下这种写法不会去重，因为前面的map后返回的类型是Object类型的Stream,Object的equals方法仅仅通过判断两个对象的地址是否相等来作为对象是否是重复对象的依据，而distinct底层是调用流中每个元素的equals方法来判断对象是否重复，所以不会真正实现去重的效果，而会报异常：Duplicate key OrderMaster(...)
+
+	```
+	List<String> expNums = list.stream().map(e -> e.getExpNum()).distinct().collect(Collectors.toList());
+	```
+
+	正确的写法:
+
+	```
+	List<String> expNums = walletDetailList.stream().map(e -> e.getExpNum()).collect(Collectors.toList());
+	expNums = expNums.stream().distinct().collect(Collectors.toList());
+	```
+
+
+
+
+
+
