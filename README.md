@@ -512,7 +512,7 @@
 	expNums = expNums.stream().distinct().collect(Collectors.toList());
 	```
 
-
+118. 使用Java8的Collectors.toMap方法将集合转map的时候一定要加第三个参数，来处理key重复的情况
 
 
 
