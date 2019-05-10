@@ -499,20 +499,14 @@
 
 	* 使用tar命令的话就可以压缩目录
 
-117. 以下这种写法不会去重，因为前面的map后返回的类型是Object类型的Stream,Object的equals方法仅仅通过判断两个对象的地址是否相等来作为对象是否是重复对象的依据，而distinct底层是调用流中每个元素的equals方法来判断对象是否重复，所以不会真正实现去重的效果，而会报异常：Duplicate key OrderMaster(...)
+117. 使用Java8的Collectors.toMap方法将集合转map的时候一定要加第三个参数，来处理key重复的情况
 
-	```
-	List<String> expNums = list.stream().map(e -> e.getExpNum()).distinct().collect(Collectors.toList());
-	```
+118. 场景：两个商品只要他们的color属性值相同就判定为同一个sku。
 
-	正确的写法:
+	bug：重写hashCode和equals方法时只将equals的判定逻辑与color挂钩，但是hashCode的计算方法仍然与color和img这两个属性有关，导致去重的时候失败。
+	
+	fix：计算hashCode时也去除其中对img的计算逻辑，只保留color。
 
-	```
-	List<String> expNums = walletDetailList.stream().map(e -> e.getExpNum()).collect(Collectors.toList());
-	expNums = expNums.stream().distinct().collect(Collectors.toList());
-	```
-
-118. 使用Java8的Collectors.toMap方法将集合转map的时候一定要加第三个参数，来处理key重复的情况
 
 
 
