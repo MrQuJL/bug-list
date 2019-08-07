@@ -580,3 +580,5 @@
      ```
 
 123. 在使用 Java 的比较器时，里面比较的属性如果是引用类型（像Integer，BigDecima这样）需要使用它们自身的 compareTo 方法来比较，或者转换为 int 类型才能比较。
+
+124. JPA 的 save 方法上类似加了个@Transactional(propagation = Propagation.REQUIRED) 事务，save 方法失败（字段为空）则会导致外部包含它的事务也会回滚。
