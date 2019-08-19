@@ -582,3 +582,55 @@
 123. 在使用 Java 的比较器时，里面比较的属性如果是引用类型（像Integer，BigDecima这样）需要使用它们自身的 compareTo 方法来比较，或者转换为 int 类型才能比较。
 
 124. JPA 的 save 方法上类似加了个@Transactional(propagation = Propagation.REQUIRED) 事务，save 方法失败（字段为空）则会导致外部包含它的事务也会回滚。
+
+125. 在 SpringBoot1.5 的版本，配置 http 转 https 需要的 Tomcat类是：``TomcatEmbeddedServletContainerFactory``，而在 SpringBoot2.0 的版本，配置 http 转 https 的 Tomcat 类是：``TomcatServletWebServerFactory``。
+
+     ```java
+     @Bean
+     public Connector connector(){
+         Connector connector=new Connector("org.apache.coyote.http11.Http11NioProtocol");
+         connector.setScheme("http");
+         connector.setPort(80);
+         connector.setSecure(false);
+         connector.setRedirectPort(443);
+         return connector;
+     }
+     
+     // 1.5的老版本
+     @Bean
+     public TomcatEmbeddedServletContainerFactory tomcatServletWebServerFactory(Connector connector){
+         TomcatEmbeddedServletContainerFactory tomcat = new TomcatEmbeddedServletContainerFactory(){
+             @Override
+             protected void postProcessContext(Context context) {
+                 SecurityConstraint securityConstraint=new SecurityConstraint();
+                 securityConstraint.setUserConstraint("CONFIDENTIAL");
+                 SecurityCollection collection=new SecurityCollection();
+                 collection.addPattern("/*");
+                 securityConstraint.addCollection(collection);
+                 context.addConstraint(securityConstraint);
+             }
+         };
+         tomcat.addAdditionalTomcatConnectors(connector);
+         return tomcat;
+     }
+     
+     // 2.0的新版本
+     @Bean
+     public TomcatServletWebServerFactory servletContainer() {
+         TomcatServletWebServerFactory tomcat = new TomcatServletWebServerFactory() {
+             @Override
+             protected void postProcessContext(Context context) {
+                 SecurityConstraint constraint = new SecurityConstraint();
+                 constraint.setUserConstraint("CONFIDENTIAL");
+                 SecurityCollection collection = new SecurityCollection();
+                 collection.addPattern("/*");
+                 constraint.addCollection(collection);
+                 context.addConstraint(constraint);
+             }
+         };
+         tomcat.addAdditionalTomcatConnectors(httpConnector());
+         return tomcat;
+     }
+     ```
+
+     
